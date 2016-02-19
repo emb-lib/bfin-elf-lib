@@ -27,7 +27,6 @@ inline uint32_t __cli()
     return rval;
 }
 //------------------------------------------------------------------------------
-#define __builtin_sti(x)           __asm__ __volatile__ ("sti %0;" : : "r"(x))
 inline void __sti(uint32_t x) 
 {
     __asm__ __volatile__ ("sti %0;" : : "d"(x));
