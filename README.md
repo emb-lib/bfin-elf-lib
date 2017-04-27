@@ -26,7 +26,7 @@ ADI GNU toolchain does not have code to register exception/interrut hanlders. Th
 
 GNU toolchain uses function `__libc_init_array` from newlib. The function performs call of low-level function `_init()` before constructor loop call. But `_init()` does not exist in toolchain library, so the using of C++ global/static objects (i.e. call of `__libc_init_array`) causes a link error. To fix this error 'weak' `_init()` function added to this support library.
 
-### Intinsic fuctions
+### Intrinsic functions
 
 ADI GNU toolchain has some built-in functions to support low-level platform-specific features. Unfortunately, not all such functions have been ported from VDSP++. This library contains `read_cycles_reg` to read processor's CYCLES register.
 
